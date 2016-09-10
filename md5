@@ -1,5 +1,7 @@
 // Generate md5 hash file in download folder
 // Trigger: "A Download Stopped"
+// Latest updates: https://raw.githubusercontent.com/DoctorD90/jd_scripts/master/md5
+// Credits: mgpai
 
 if (link.isFinished()) {
 	var filename = link.getName()
