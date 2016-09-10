@@ -1,0 +1,12 @@
+// Generate md5 hash file in download folder
+// Trigger: "A Download Stopped"
+
+if (link.isFinished()) {
+	var filename = link.getName()
+	var file = link.getDownloadPath()
+	var folder = link.package.getDownloadFolder()
+	var hashfile = folder + "/" + filename + "\.md5"
+	if (getPath(hashfile).exists()) getPath(hashfile).delete()
+	var MD5text = getChecksum("md5", file).toLowerCase() + "\t" + filename + "\n"
+	writeFile(hashfile, MD5text, true)
+}
